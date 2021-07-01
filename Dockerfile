@@ -1,5 +1,6 @@
 #get image base debian
 FROM debian:testing
+LABEL authors="Merlyn Jaqueline Juarez Gutierrez <merlynj@icf.unam.mx>, Wolf Luis Mochán Backal <mochan@icf.unam.mx>"
 RUN apt update;\
     apt -y upgrade; \
     apt -y install \
@@ -82,4 +83,3 @@ RUN cpanm -n \
 #Photonic
 #RUN cpanm Photonic
 CMD export DISPLAY=:0; bash
-LABEL author= "Merlyn Jaqueline Juarez Gutierrez <merlynj@icf.unam.mx>, Wolf Luis Mochán Backal <mochan@icf.unam.mx>"
