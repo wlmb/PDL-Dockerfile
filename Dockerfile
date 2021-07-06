@@ -1,15 +1,18 @@
 #get image base debian
 FROM debian:testing
 LABEL authors="Merlyn Jaqueline Juarez Gutierrez <merlynj@icf.unam.mx>, Wolf Luis Mochán Backal <mochan@icf.unam.mx>"
+COPY locale.gen /etc/locale.gen
 RUN apt update;\
     apt -y upgrade; \
     apt -y install \
-    less \
+    apt-utils \
     cmake \
     cpanminus \
+    csh \
     freeglut3-dev \
     gfortran \
     gnuplot-qt \
+    less \
     liblapack-dev \
     libcfitsio-dev \
     libfribidi-dev \
@@ -33,16 +36,20 @@ RUN apt update;\
     libopengl-image-perl \
     libopengl-perl \
     libfftw3-dev \
+    locales \
     make \
+    nano \
     netpbm \
     openssh-server \
-    tmux \
-    sharutils \
-    xterm \
     patch \
+    sharutils \
+    tmux \
+    wget \
+    xterm \
     zip \
-    csh \
-    wget;
+    ;
+# Build a locale
+RUN locale-gen
 #Install some PDL DEPENDENCIES
 RUN cpanm \
     Devel::CheckLib \
@@ -82,4 +89,5 @@ RUN cpanm -n \
     PDL::Graphics::Gnuplot
 #Photonic
 #RUN cpanm Photonic
-CMD export DISPLAY=:0; bash
+ENV LANG=en_US.UTF-8 DISPLAY=:0
+CMD bash
