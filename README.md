@@ -24,3 +24,10 @@ pdl interpreter as follows
     .
     .
     .
+## Authors:
+   - Merlyn Jaqueline Juárez Gutiérrez @MerlynJJ
+   - Luis Mochán  @wlmb
+
+## Thanks:
+
+This work was supported by DGAPA-UNAM under grant IN111119.
